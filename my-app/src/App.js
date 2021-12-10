@@ -103,9 +103,6 @@ function App() {
         name="Nick Shephard"
         />
         {routes}
-
-      <header className="App-header">
-      </header>
     </div>
   );
 }
@@ -137,18 +134,18 @@ export default App;
 //         {CheckboxExample()}
 //         <Header />
 //         <ButtonGroup variant="contained">
-//           <Button 
-//           // startIcon={<SaveIcon />}
-//           endIcon={<SaveIcon />}
-//           // variant="contained" 
-//           style={{
-//             fontSize: "24"
-//           }}
-//           color="primary" 
-//           href="#" 
-//           size="large" 
-//           onClick={() => console.log("hi!")}>
-//           Save</Button>
+          // <Button 
+          // // startIcon={<SaveIcon />}
+          // endIcon={<SaveIcon />}
+          // // variant="contained" 
+          // style={{
+          //   fontSize: "24"
+          // }}
+          // color="primary" 
+          // href="#" 
+          // size="large" 
+          // onClick={() => console.log("hi!")}>
+          // Save</Button>
 
 //           <Button 
 //           // startIcon={<DeleteIcon />}

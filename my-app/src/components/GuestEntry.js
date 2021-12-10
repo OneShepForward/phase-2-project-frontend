@@ -1,15 +1,31 @@
 import React from "react";
 
-function GuestEntry(guestInfo) {
+// Material imports
+import Typography from '@mui/material/Typography';
+import Card from '@mui/material/Card';
+import Button from '@mui/material/Button';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+
+
+function GuestEntry({ guestInfo }) {
+
+    // console.log(guestInfo, "Guest info")
 
     const { name, message } = guestInfo
 
-    return (
+  return (
     <div className="guest-entry">
-        <p> Test test test </p>
-        <p>{message}</p>
-        <br/>
-        <p>-{name}</p>
+    <Card sx={{ minWidth: 275 }}>
+      <CardContent>
+        <Typography variant="h5" component="div">
+          {message}
+        </Typography>
+        <Typography sx={{ mb: 1.5 }} color="text.secondary">
+          {name}
+        </Typography>
+      </CardContent>
+    </Card>
     </div>
   );
 }

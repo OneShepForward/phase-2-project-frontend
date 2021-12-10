@@ -9,6 +9,7 @@
     "@material-ui/styles": "^4.11.4",
     "@material/button": "^13.0.0",
     "@material/top-app-bar": "^13.0.0",
+    "@mui/icons-material": "^5.2.1",
     "@mui/material": "^5.2.3",
     "@mui/styles": "^5.2.3",
     "@testing-library/jest-dom": "^5.16.1",
@@ -19,6 +20,8 @@
     "react-router": "^6.0.2",
     "react-router-dom": "^6.0.2",
     "react-scripts": "4.0.3",
+    "styled": "^1.0.0",
+    "styled-components": "^5.3.3",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
