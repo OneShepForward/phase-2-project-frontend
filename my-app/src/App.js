@@ -66,16 +66,6 @@ function CheckboxExample() {
   )
 }
 
-// // example of non-switch usage
-// <BrowserRouter>
-//     <Routes>
-//       <Route path="/" element={<App />} />
-//       <Route path="expenses" element={<Expenses />} />
-//       <Route path="invoices" element={<Invoices />} />
-//     </Routes>
-//   </BrowserRouter>,
-
-
 let routes = (
   // <Fade>
     <Routes>

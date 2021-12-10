@@ -91,19 +91,19 @@ function GuestBook() {
             <form onSubmit={handleSubmit} className="form">
                 <h2>Sign the Guest Book!</h2>
                 <TextField 
-                    id="new-entry-name" 
-                    label="Name" 
-                    variant="outlined" 
-                    onChange={handleFormUpdate}
-                    value={formData.name}
-                /> 
-                <TextField 
                     id="new-entry-message" 
                     label="Message" 
                     variant="outlined" 
                     onChange={handleFormUpdate}
                     value={formData.message}
                 />
+                <TextField 
+                    id="new-entry-name" 
+                    label="Name" 
+                    variant="outlined" 
+                    onChange={handleFormUpdate}
+                    value={formData.name}
+                /> 
                 <br/>
                 <br/>
                 <Button 
