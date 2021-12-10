@@ -79,7 +79,7 @@ function CheckboxExample() {
 let routes = (
   // <Fade>
     <Routes>
-      <Route exact path="/" element={<Home />} />
+      <Route path="/" element={<Home />} />
         
       <Route path="/links" element={<Links />} />
         

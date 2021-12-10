@@ -4,9 +4,9 @@ function Home() {
 
     return (
     <div className="home">
-        <header>
-            <h1>Home page</h1>
-        </header>
+        <h1>hello, world</h1>
+        <h2>I'm Nick Shephard</h2><br/>
+        <h2>and I create things</h2>    
     </div>
   );
 }

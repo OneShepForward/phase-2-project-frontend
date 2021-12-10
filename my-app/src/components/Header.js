@@ -1,5 +1,9 @@
 import React from "react";
-import { Link as RouterLink, MemoryRouter } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
+// styled imports
+import styled from "styled-components";
 
 // Material imports
 import Box from '@mui/material/Box';
@@ -7,9 +11,9 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { textAlign } from "@mui/system";
 
-// styled imports
-import styled from "styled-components";
 
+// let history = useNavigate;
+//   history(props.href);
 
 // function LinkTab(props) {
 //     return (
@@ -22,6 +26,20 @@ import styled from "styled-components";
 //       />
 //     );
 //   }
+
+  function LinkTab(props) {
+    let navigate = useNavigate();
+    return (
+      <Tab
+        component={RouterLink}
+        onClick={(event) => {
+          event.preventDefault();
+          navigate(props.to);
+        }}
+        {...props}
+      />
+    );
+  }
 
 const LeftAlignedHeader = styled.div`
     text-align: left;
@@ -38,7 +56,27 @@ function Header({ name }) {
     const handleChange = (event, newValue) => {
       setValue(newValue);
     };
+
+    return (
+        <>
+            <header>
+                <h1 style={{textAlign: "left"}}>
+                    <span className="logo"></span>
+                    {name} - Header
+                </h1>
+            </header>
+          
+          <Box sx={{ width: '100%' }}>
+            <Tabs variant="fullWidth" value={value} onChange={handleChange} aria-label="nav tabs example">
+              <LinkTab to="/" label="Home" href="/" />
+              <LinkTab to="/guest-book" label="Guest Book" />
+              <LinkTab to="/links" label="Links" />
+            </Tabs>
+          </Box>
+        </>
+        );
   
+// Material Link Tabs v1    
     // return (
     // <>
     //     <header>
@@ -50,40 +88,40 @@ function Header({ name }) {
       
     //   <Box sx={{ width: '100%' }}>
     //     <Tabs variant="fullWidth" value={value} onChange={handleChange} aria-label="nav tabs example">
+    //       <LinkTab label="Home" href="/" />
     //       <LinkTab label="Guest Book" href="/guest-book" />
     //       <LinkTab label="Links" href="/links" />
-    //       <LinkTab label="Home" href="/" />
     //     </Tabs>
     //   </Box>
     // </>
     // );
   
 
-  return (
-    <LeftAlignedHeader className="header">
-        <header>
-            <h1 >
-                <span className="logo"></span>
-                {name} - Header
-            </h1>
-            <nav 
-                style={{
-                    fontSize: "24px", 
-                    textAlign: "center",
-                    }}>
-                <LinkButton className="button" href="/">
-                    Home 
-                </LinkButton>                
-                <LinkButton className="button" href="/guest-book">
-                    Guest Book 
-                </LinkButton>
-                <LinkButton className="button" href="/links">
-                    Links 
-                </LinkButton>
-            </nav>
-        </header>
-    </LeftAlignedHeader>
-  );
+//   return (
+//     <LeftAlignedHeader className="header">
+//         <header>
+//             <h1 >
+//                 <span className="logo"></span>
+//                 {name} - Header
+//             </h1>
+//             <nav 
+//                 style={{
+//                     fontSize: "24px", 
+//                     textAlign: "center",
+//                     }}>
+//                 <LinkButton className="button" href="/">
+//                     Home 
+//                 </LinkButton>                
+//                 <LinkButton className="button" href="/guest-book">
+//                     Guest Book 
+//                 </LinkButton>
+//                 <LinkButton className="button" href="/links">
+//                     Links 
+//                 </LinkButton>
+//             </nav>
+//         </header>
+//     </LeftAlignedHeader>
+//   );
 
 }
 
