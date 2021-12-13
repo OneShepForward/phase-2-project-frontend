@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import GuestEntry from "./GuestEntry"
+import loadingAnimation from "../image/output-onlinegiftools.gif"
 
 // Materials imports 
 import TextField from "@mui/material/TextField";
@@ -27,19 +28,30 @@ function GuestBook() {
         .catch(error => console.warn("Issue with fetch occurred: ", error));
         // setRendered(true);
 
-        // Using this code for now to simulate loading time
-        setTimeout(() => {
+        // Using this code for now to simulate loadingAnimation time
+        const timer = setTimeout(() => {
             setRendered(true);
-        }, 1000);
+        }, 3000);
+
+        // cleanup
+        return function cleanup() {
+            console.log("Running cleanup");
+            // ✅ clear the interval so state is no longer updated
+            clearInterval(timer);
+          };
     }
 
     useEffect(getEntries, [])
 
-    const renderEntries = guestEntries.map((entry) => 
+    const renderEntries = guestEntries.map((entry) => {
+    return (<>
     <GuestEntry 
     guestInfo={entry}
     key={entry.id}
     />
+    <br/>
+    </>)
+    }
     )
 
     const handleSubmit = (e) => {
@@ -123,7 +135,7 @@ function GuestBook() {
     </div>
   );
                 } else {
-                    return (<p> Loading... </p>);
+                    return (<img src={loadingAnimation} width="100" />);
                 }
 }
 

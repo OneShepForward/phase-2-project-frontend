@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif ;
+  /* background-image: url(./image/cool-background.png); */
 }
 
 .App-logo {
@@ -14,7 +16,7 @@
 }
 
 .App-header {
-  background-color: white;
+  background-color: #7C898B;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

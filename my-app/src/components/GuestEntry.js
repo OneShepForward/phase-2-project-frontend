@@ -16,7 +16,7 @@ function GuestEntry({ guestInfo }) {
 
   return (
     <div className="guest-entry">
-    <Card sx={{ minWidth: 275 }}>
+    <Card sx={{ minWidth: 50, border: 2 }}>
       <CardContent>
         <Typography variant="h5" component="div">
           {message}

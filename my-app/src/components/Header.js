@@ -1,6 +1,7 @@
 import React from "react";
 import { Link as RouterLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import logo from "../image/oneShepForwardLogoTransparentTest.png";
 
 // styled imports
 import styled from "styled-components";
@@ -10,6 +11,7 @@ import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { textAlign } from "@mui/system";
+import { withThemeCreator } from "@material-ui/styles";
 
 
 // let history = useNavigate;
@@ -61,8 +63,7 @@ function Header({ name }) {
         <>
             <header>
                 <h1 style={{textAlign: "left"}}>
-                    <span className="logo"></span>
-                    {name} - Header
+                {name}  //  <img className="logo" src={logo} alt="logo" height="30" ></img>
                 </h1>
             </header>
           

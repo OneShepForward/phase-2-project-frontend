@@ -3,15 +3,14 @@ import logo from './logo.svg';
 import * as React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, Routes, Link } from "react-router-dom";
+import './App.css';
 
 import Home from "./components/Home";
-import About from "./components/About";
 import Links from "./components/Links";
 import SandwichDeviser from "./components/SandwichDeviser";
 import GuestBook from "./components/GuestBook";
 import NoMatch from "./components/NoMatch";
 import Header from "./components/Header"
-import './App.css';
 
 // material imports
 import Button from "@mui/material/Button";
@@ -25,46 +24,10 @@ import TextField from "@mui/material/TextField";
 import { makeStyles } from "@mui/styles"
 
 
-// This doesn't work, likely due to a v5 compatibility issue
-const useStyles = makeStyles({
-  root: {
-    background: "liner-gradient(45deg, #333, #000)",
-    border: 10,
-    borderRadius: 15,
-    color: "white",
-    padding: "0 30px",
-  }
-})
-
-function ButtonStyled() {
-  const classes = useStyles();
-  return <Button className={classes.root}> Test Styled Button </Button>
-}
+import backgroundPic from "./image/cool-background.png"
 
 
-function CheckboxExample() {
-  const [checked, setChecked] = React.useState(true)
-  return(
 
-
-    <FormControlLabel 
-    control={
-
-      <Checkbox 
-        checked={checked}
-        onChange={(e) => setChecked(e.target.checked)}
-        icon={<DeleteIcon />}
-        checkedIcon={<DeleteIcon />}
-        color="secondary"
-        inputProps={{
-          'aria-label': 'secondary checkbox'
-        }}
-
-      />}
-      label="Testing Checkbox"
-    />
-  )
-}
 
 let routes = (
   // <Fade>
@@ -87,12 +50,14 @@ function App() {
 
 
 
+
   return (
-    <div className="App">
-        <Header
-        name="Nick Shephard"
-        />
-        {routes}
+    <div className="App" style={{ background: "rgba(0,0,0,0)" }}>  
+    {/* <div className="App" style={{ backgroundImage: `url(${backgroundPic})` }}>   */}
+          <Header
+          name="Nick Shephard"
+          />
+          {routes}
     </div>
   );
 }
@@ -155,4 +120,29 @@ export default App;
 //       </header>
 //     </div>
 //   );
+// }
+
+
+// function CheckboxExample() {
+//   const [checked, setChecked] = React.useState(true)
+//   return(
+
+
+//     <FormControlLabel 
+//     control={
+
+//       <Checkbox 
+//         checked={checked}
+//         onChange={(e) => setChecked(e.target.checked)}
+//         icon={<DeleteIcon />}
+//         checkedIcon={<DeleteIcon />}
+//         color="secondary"
+//         inputProps={{
+//           'aria-label': 'secondary checkbox'
+//         }}
+
+//       />}
+//       label="Testing Checkbox"
+//     />
+//   )
 // }

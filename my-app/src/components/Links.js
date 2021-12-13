@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from "react";
 import BlogPost from "./BlogPost"
 
+import loadingAnimation from "../image/output-onlinegiftools.gif"
+
    
 function Links() {
     const [blogPosts, setBlogPosts] = useState([]);
@@ -16,18 +18,30 @@ function Links() {
         // setRendered(true);
 
         // Using this code for now to simulate loading time
-        setTimeout(() => {
+        const timer = setTimeout(() => {
             setRendered(true);
-        }, 1000);
+        }, 3000);
+
+        //cleanup function 
+        return function cleanup() {
+            console.log("Running cleanup");
+            // ✅ clear the interval so state is no longer updated
+            clearInterval(timer);
+            };
     }
 
     useEffect(getEntries, [])
 
-    const renderBlogPosts = blogPosts.map((post) => 
+    const renderBlogPosts = blogPosts.map((post) => {
+        return (
+    <>
     <BlogPost 
     postInfo={post}
     key={post.id}
     />
+    <br/>
+    </>
+    )}
     )
 
 
@@ -42,7 +56,7 @@ function Links() {
         </div>
         );
     } else {
-        return (<p> Loading... </p>);
+        return (<img src={loadingAnimation} width="100" />);
     }
 }
 
