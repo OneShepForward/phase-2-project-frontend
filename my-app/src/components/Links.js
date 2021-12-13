@@ -11,9 +11,11 @@ function Links() {
     const [isRendered, setRendered] = useState(false);
     
     const JSON_URL = "http://localhost:3000/blog-posts"
+    const heroku_URL = "https://one-shep-forward-hq.herokuapp.com/blog-posts"
 
     const getEntries = () => {
-        fetch(JSON_URL)
+        // fetch(JSON_URL)
+        fetch(heroku_URL)
         .then(r => r.json())
         .then(setBlogPosts)
         .catch(error => console.warn("Issue with fetch occurred: ", error));
