@@ -26,9 +26,10 @@ function GuestBook() {
         .then(r => r.json())
         .then(setEntries)
         .catch(error => console.warn("Issue with fetch occurred: ", error));
+        // Use next line to just check for actual load
         // setRendered(true);
 
-        // Using this code for now to simulate loadingAnimation time
+        // Use this code to simulate loading time
         const timer = setTimeout(() => {
             setRendered(true);
         }, 3000);

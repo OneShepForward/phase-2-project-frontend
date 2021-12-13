@@ -32,10 +32,10 @@ import { ThemeProvider } from '@mui/styles';
 export const theme = createTheme({
 
 // components: {
-//     MuiButton: {
+//     MuiTab: {
 //         styleOverrides: {
 //             root: {
-//                 backgroundColor: "red"
+//                 fontSize: "40px"
 //             }
 //         }
 //     }

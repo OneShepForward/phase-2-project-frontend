@@ -16,7 +16,7 @@ function BlogPost({ postInfo }) {
 
   return (
     <div className="blog-post">
-    <Card sx={{ minWidth: 275, gap: 2 }}>
+    <Card variant="outlined" sx={{ minWidth: 275, gap: 2 }}>
       <CardContent>
         <Typography variant="h5" component="div">
           {title}

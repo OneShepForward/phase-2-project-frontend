@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import BlogPost from "./BlogPost"
 
 import loadingAnimation from "../image/output-onlinegiftools.gif"
+import linkedInLogo from "../image/linkedIn.png"
 
    
 function Links() {
@@ -15,9 +16,10 @@ function Links() {
         .then(r => r.json())
         .then(setBlogPosts)
         .catch(error => console.warn("Issue with fetch occurred: ", error));
+        // Use next line to just check for actual load
         // setRendered(true);
 
-        // Using this code for now to simulate loading time
+        // Use this code to simulate loading time
         const timer = setTimeout(() => {
             setRendered(true);
         }, 3000);
@@ -45,14 +47,36 @@ function Links() {
     )
 
 
+        // const renderLinkedIn = () => {
+        // useEffect(() => {
+        //     const script = document.createElement('script');
+        
+        //     script.src = 'https://platform.linkedin.com/badges/js/profile.js';
+        //     script.async = true;
+        //     script.defer = true;
+        //     script.type= "text/javascript"
+        
+        //     document.body.appendChild(script);
+        
+        //     return () => {
+        //       document.body.removeChild(script);
+        //     };
+        //   }, []);
+        // }
+
+
 
     if (isRendered) {
         return (
         <div className="links">
-
-                <h1>Blog Posts</h1>
-                {renderBlogPosts}
-    
+            <h1>Blog Posts</h1>
+            {renderBlogPosts}           
+            <a href="https://www.linkedin.com/in/shephardn/">
+                <img
+                src={linkedInLogo}
+                alt="Link to Nick's LinkedIn Page"
+                />
+            </a>
         </div>
         );
     } else {

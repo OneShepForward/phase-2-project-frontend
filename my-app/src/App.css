@@ -26,9 +26,22 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.tab {
+  color: red;
+  font-size: 50px;
 }
+
+#linktab, #hometab, #guesttab, #badtab {
+  font-size: 30px;
+}
+/* <LinkTab to="/" label="Home" id="hometab" />
+<LinkTab to="/guest-book" label="Guest Book" id="guesttab" />
+<LinkTab to="/links" label="Links" id="linktab" />
+<LinkTab to="/error404" label="Don't Click!" id="badtab" /> */
+
+/* .App-link {
+  color: #61dafb;
+} */
 
 @keyframes App-logo-spin {
   from {
