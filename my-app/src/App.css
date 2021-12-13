@@ -34,6 +34,10 @@
 #linktab, #hometab, #guesttab, #badtab {
   font-size: 30px;
 }
+
+#new-entry-name, #new-entry-message {
+  color: black;
+}
 /* <LinkTab to="/" label="Home" id="hometab" />
 <LinkTab to="/guest-book" label="Guest Book" id="guesttab" />
 <LinkTab to="/links" label="Links" id="linktab" />

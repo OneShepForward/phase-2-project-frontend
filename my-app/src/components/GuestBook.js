@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import GuestEntry from "./GuestEntry"
 import loadingAnimation from "../image/output-onlinegiftools.gif"
+import '../App.css';
 
 // Materials imports 
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import AddIcon from '@mui/icons-material/Add';
-
-
-
+import { Container } from "@mui/material";
 
 function GuestBook() {
 
@@ -44,12 +43,13 @@ function GuestBook() {
 
     useEffect(getEntries, [])
 
+
     const renderEntries = guestEntries.map((entry) => {
     return (<>
-    <GuestEntry 
-    guestInfo={entry}
-    key={entry.id}
-    />
+        <GuestEntry 
+        guestInfo={entry}
+        key={entry.id}
+        />
     <br/>
     </>)
     }
@@ -57,7 +57,6 @@ function GuestBook() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(e)
 
         fetch(JSON_URL, {
             method: "POST",
@@ -70,6 +69,10 @@ function GuestBook() {
         .then((newEntry) => {
             handleAddEntry(newEntry)
             console.log("Submitting: ", newEntry)
+            setFormData({
+                name: "",
+                message: "",
+            })
         })
         .catch(error => console.log("Error submit new project: ", error))
     }
@@ -98,8 +101,10 @@ function GuestBook() {
     if (isRendered) {
     return (
     <div className="guest-book">
-            <h1>Guest Book</h1>
+        <h1>Guest Book</h1>
+        <Container>
         {renderEntries}
+        </Container>
         <div className="add-entry">
             <form onSubmit={handleSubmit} className="form">
                 <h2>Sign the Guest Book!</h2>
@@ -109,13 +114,15 @@ function GuestBook() {
                     variant="outlined" 
                     onChange={handleFormUpdate}
                     value={formData.message}
-                />
+                    sx={{backgroundColor: "#ffffff"}}
+                /> {" "}
                 <TextField 
                     id="new-entry-name" 
                     label="Name" 
-                    variant="outlined" 
+                    variant="filled" 
                     onChange={handleFormUpdate}
                     value={formData.name}
+                    sx={{backgroundColor: "#ffffff"}}
                 /> 
                 <br/>
                 <br/>
@@ -131,13 +138,15 @@ function GuestBook() {
                 >
                     Add
                 </Button>
+                <br/>
+                <br/>
             </form>
         </div>
     </div>
   );
-                } else {
-                    return (<img src={loadingAnimation} width="100" />);
-                }
+    } else {
+        return (<img src={loadingAnimation} alt="Compass loading animation" width="150" />);
+    }
 }
 
 export default GuestBook;

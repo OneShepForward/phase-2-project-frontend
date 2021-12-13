@@ -1,64 +1,6 @@
 import { createTheme } from '@mui/material';
 
-import { makeStyles } from "@mui/styles"
-
-import { ThemeProvider } from '@mui/styles';
-
-
-
-
-
-// const theme = createTheme({
-//   palette: {
-//     type: 'dark',
-//     primary: {
-//       main: '#b3aaa2',
-//       light: '#b29e84',
-//       dark: '#253439',
-//     },
-//     secondary: {
-//       main: '#f50057',
-//     },
-//     background: {
-//       default: '#7C898B',
-//     },
-//   },
-//   typography: {
-//     fontFamily: 'Montserrat',
-//     fontSize: 14,
-//   },
-// });
-
 export const theme = createTheme({
-
-// components: {
-//     MuiTab: {
-//         styleOverrides: {
-//             root: {
-//                 fontSize: "40px"
-//             }
-//         }
-//     }
-// },
-
-//     palette: {
-//     type: 'light',
-//     primary: {
-//       main: '#b3aaa2',
-//       light: '#b29e84',
-//       dark: '#253439',
-//     },
-//     secondary: {
-//       main: '#f50057',
-//     },
-//     background: {
-//       default: '#7C898B',
-//     },
-//   },
-//   typography: {
-//     fontFamily: 'Montserrat',
-//     fontSize: 18,
-//   },
 
   palette: {
     type: 'light',
@@ -96,3 +38,53 @@ export const theme = createTheme({
     fontSize: 18,
   },
 });
+
+// const theme = createTheme({
+//   palette: {
+//     type: 'dark',
+//     primary: {
+//       main: '#b3aaa2',
+//       light: '#b29e84',
+//       dark: '#253439',
+//     },
+//     secondary: {
+//       main: '#f50057',
+//     },
+//     background: {
+//       default: '#7C898B',
+//     },
+//   },
+//   typography: {
+//     fontFamily: 'Montserrat',
+//     fontSize: 14,
+//   },
+// });
+
+// components: {
+//     MuiTab: {
+//         styleOverrides: {
+//             root: {
+//                 fontSize: "40px"
+//             }
+//         }
+//     }
+// },
+
+//     palette: {
+//     type: 'light',
+//     primary: {
+//       main: '#b3aaa2',
+//       light: '#b29e84',
+//       dark: '#253439',
+//     },
+//     secondary: {
+//       main: '#f50057',
+//     },
+//     background: {
+//       default: '#7C898B',
+//     },
+//   },
+//   typography: {
+//     fontFamily: 'Montserrat',
+//     fontSize: 18,
+//   },

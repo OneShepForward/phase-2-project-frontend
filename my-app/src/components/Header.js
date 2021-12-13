@@ -1,18 +1,13 @@
 import React from "react";
 import { Link as RouterLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import logo from "../image/Compass_Stamp_transp.png";
+// import logo from "../image/Compass_Stamp_transp.png";
 import '../App.css';
-
-// styled imports
-import styled from "styled-components";
 
 // Material imports
 import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import { textAlign, typography } from "@mui/system";
-import { withThemeCreator } from "@material-ui/styles";
 
   function LinkTab(props) {
     let navigate = useNavigate();
@@ -30,15 +25,16 @@ import { withThemeCreator } from "@material-ui/styles";
     );
   }
 
-const LeftAlignedHeader = styled.div`
-    text-align: left;
-`;
+// const LeftAlignedHeader = styled.div`
+//     text-align: left;
+// `;
 
-const LinkButton = styled.a`
-    margin-left: 0.5rem;
-`
+// const LinkButton = styled.a`
+//     margin-left: 0.5rem;
+// `
 
-function Header({ name }) {
+// function Header({ name }) {
+    function Header({ name }) {
 
     const [value, setValue] = React.useState(0);
 

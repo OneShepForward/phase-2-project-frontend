@@ -3,6 +3,7 @@ import BlogPost from "./BlogPost"
 
 import loadingAnimation from "../image/output-onlinegiftools.gif"
 import linkedInLogo from "../image/linkedIn.png"
+import { Container } from "@mui/material";
 
    
 function Links() {
@@ -37,34 +38,16 @@ function Links() {
     const renderBlogPosts = blogPosts.map((post) => {
         return (
     <>
+    <Container>
     <BlogPost 
     postInfo={post}
     key={post.id}
     />
+    </Container>
     <br/>
     </>
     )}
-    )
-
-
-        // const renderLinkedIn = () => {
-        // useEffect(() => {
-        //     const script = document.createElement('script');
-        
-        //     script.src = 'https://platform.linkedin.com/badges/js/profile.js';
-        //     script.async = true;
-        //     script.defer = true;
-        //     script.type= "text/javascript"
-        
-        //     document.body.appendChild(script);
-        
-        //     return () => {
-        //       document.body.removeChild(script);
-        //     };
-        //   }, []);
-        // }
-
-
+    );
 
     if (isRendered) {
         return (
@@ -80,7 +63,7 @@ function Links() {
         </div>
         );
     } else {
-        return (<img src={loadingAnimation} width="100" />);
+        return (<img src={loadingAnimation} alt="Compass loading animation" width="150"/>);
     }
 }
 
