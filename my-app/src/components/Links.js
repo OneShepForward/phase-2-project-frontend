@@ -10,7 +10,7 @@ function Links() {
     const [blogPosts, setBlogPosts] = useState([]);
     const [isRendered, setRendered] = useState(false);
     
-    const JSON_URL = "http://localhost:3000/blog-posts"
+    // const JSON_URL = "http://localhost:3000/blog-posts"
     const heroku_URL = "https://one-shep-forward-hq.herokuapp.com/blog-posts"
 
     const getEntries = () => {

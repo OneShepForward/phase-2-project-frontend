@@ -18,7 +18,7 @@ function GuestBook() {
         message: "",
     })
     
-    const JSON_URL = "http://localhost:3000/logs"
+    // const JSON_URL = "http://localhost:3000/logs"
     const heroku_URL = "https://one-shep-forward-hq.herokuapp.com/logs"
 
     const getEntries = () => {
@@ -38,7 +38,6 @@ function GuestBook() {
         // cleanup
         return function cleanup() {
             console.log("Running cleanup");
-            // ✅ clear the interval so state is no longer updated
             clearInterval(timer);
           };
     }
@@ -60,7 +59,8 @@ function GuestBook() {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        fetch(JSON_URL, {
+        // fetch(JSON_URL, {
+        fetch(heroku_URL, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

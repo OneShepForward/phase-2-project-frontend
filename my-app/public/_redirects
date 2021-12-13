@@ -1,5 +1,2 @@
 # Redirects from what the browser requests to what we serve
-/              /
-/blinks /links
-/guest-book             /guest-book
-*            *
+/*    /index.html   200
