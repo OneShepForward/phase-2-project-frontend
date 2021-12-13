@@ -4,10 +4,6 @@ import Pic from "../image/ProfilePicture.png"
 function Home() {
 
     const [isVisible, setVisible] = React.useState(false);
-  
-    // function handleClick() {
-    //     setVisible(v => !v);
-    // }
 
     React.useEffect(() => {        
         setVisible(true)
